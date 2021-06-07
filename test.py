@@ -1,10 +1,8 @@
+from array import *
 
+arr = array("i",[1,2,3])
 
-import numpy as np 
+arr.append([4,5,6])
 
-arr = np.array([[1,2,3] , [4,5,6] , [7,8,9]])
-
-for i in range(len(arr)):
-    for j in range(len(arr[0])):
-        print(arr[i,j])
+print(arr)
 

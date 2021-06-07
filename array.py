@@ -19,14 +19,14 @@ def minmax(arr):
     min = 0
     max = 0
     if len(arr) == 1:
-        min = a[0]
-        max = a[0]
-    if len(arr) == 2 and a[0] > a[1]:
-        min = a[1]
-        max = a[0]
-    if len(arr) == 2 and a[0] < a[1]:
-        min = a[0]
-        max = a[1]
+        min = arr[0]
+        max = arr[0]
+    if len(arr) == 2 and arr[0] > arr[1]:
+        min = arr[1]
+        max = arr[0]
+    if len(arr) == 2 and arr[0] < arr[1]:
+        min = arr[0]
+        max = arr[1]
     if len(arr) > 2:
         min = arr[0]
         for i in range(len(arr)):
@@ -77,7 +77,7 @@ def sort012(arr,n):
         # code here
         return arr
 
-############################Move all negative elements to one side o an array###################
+############################Move all negative elements to one side of an array###################
 
 def negSort(a):
     for i in range(len(a)):
@@ -138,4 +138,80 @@ def missing(arr):
     sumArr = sum(arr)
     return sum10 - sumArr
 
-######################
+###################### Find max product of two elements in given array ####################
+
+def maxProd(arr):
+    max = 1
+    for i in range(len(arr)):
+        for j in range(i+1 , len(arr)):
+            if arr[i]*arr[j] > max:
+                max = arr[i]*arr[j]
+    return max 
+
+def mProd(arr):
+    arr.sort()
+    return arr[-1]*arr[-2]
+
+print(mProd([0,1,2,5,2,8,9]))
+
+
+############################# Minimise the maximum difference between heights [V.IMP] ###############################
+
+def getMinDiff(arr, n, k):
+        arr.sort()
+        mxs=[]
+        mns=[]
+        for i in arr:
+            mxs.append(i+k)
+            mns.append(i-k)
+        ans=arr[-1]-arr[0]
+        for i in range(1,n):
+            if(mns[i]>=0):
+                ans=min(ans,max(mns[n-1],mxs[i-1])-min(mns[i],mxs[0]))
+        return ans
+
+# Input:
+# K = 2, N = 4
+# Arr[] = {1, 5, 8, 10}
+# Output:
+# 5
+# Explanation:
+# The array can be modified as 
+# {3, 3, 6, 8}. The difference between 
+# the largest and the smallest is 8-3 = 5.
+
+
+############################  Find the min no of jumps to reach last element of an array ##################
+
+def minJumps(a):
+    if len(a) == 1:
+        return 0
+    if a[0] == 0:
+        return -1
+    mi = a[0]
+    step = a[0]
+    jump = 1
+    for i in range(1,len(a)):
+        if i == len(a):
+            return jump
+        mi = max(mi , i+a[i])
+        step-=1
+        if step == 0:
+            jump+=1
+            if i < mi:
+                return -1
+            step = mi - i
+    return -1
+
+#######################   
+
+
+
+
+
+
+
+
+
+
+    
