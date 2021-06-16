@@ -65,4 +65,15 @@ def allSetBits(N):
     return SB 
 
 
-print(allSetBits(16))
+########################   Find power set of the given string (all possible strings)  ##########33
+
+def AllPossibleStrings(s):
+    n = len(s)
+    ans=[]
+    for i in range(1 , (1<<n)):
+        s1=""
+        for j in range(0 , n):
+            if (i & (1<<j)) > 0:
+                s1+=s[j]
+        ans.append(s1)
+    return ans
