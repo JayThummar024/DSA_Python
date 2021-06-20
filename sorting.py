@@ -1,7 +1,7 @@
 
 import math
 
-a = [2, 5, 4, 1, 9, 6, 7, 8, 3]
+a = [3,5,8,2,1,10,4]
 
 ########################################### Bubble sort ###########################################
 
@@ -91,7 +91,7 @@ def bucketSort(arr):
 
 # in this we divide array in half untill we have all the elements seperated then we merge them into acending order so the final array will be sorted
 
-#below implementationtakse O(n*log(n)) time and O(1) space complexity
+#below implementationtakse O(n*log(n)) time and O(n) space complexity
 
 def merge_sorted_arr(a,b,arr):
     len_a = len(a)
@@ -131,5 +131,44 @@ def mergeSort(arr):
     mergeSort(right)
 
     merge_sorted_arr(left, right, arr)
+
+
+
+################################################ Quick sort ###############################################
+
+# in this we we take a pivot element at random (preffered 1st or last) and then we have two more pointer left and right , we iterate through array and we place all the elements less than pivot to the left and all the element greater than pivot to the right , after this pivot element is at right position ad we do same operation to left side of pivot and right side of the pivot
+
+def partition(arr , start , end):
+    pivot_index = start
+    pivot = arr[pivot_index]
+
+    while start < end:
+        while arr[start] <= pivot and start < len(arr):
+            start+=1
+
+        while arr[end] > pivot:
+            end-=1
+
+        if start < end:
+            arr[start] , arr[end] = arr[end] , arr[start]
+
+    arr[pivot_index] , arr[end] = arr[end] , arr[pivot_index]
+    return end
+
+def quickSort(arr , start ,end):
+    if start < end:
+        pi = partition(a, start, end)
+        quickSort(a, start, pi-1)
+        quickSort(a, pi+1, end)
+
+
+quickSort(a, 0, len(a)-1)
+print(a)
+
+
+
+
+
+
 
 
