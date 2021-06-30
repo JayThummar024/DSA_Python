@@ -1,8 +1,17 @@
-from array import *
+dic = {}
 
-arr = array("i",[1,2,3])
+arr = [2,7,11,15]
 
-arr.append([4,5,6])
+def twoSum(a , target):
+    for i in range(len(a)):
+        comp = target - arr[i]
+        if a[i] in dic:
+            return [dic[a[i]] , i]
+        else:
+            dic[comp] = i
 
-print(arr)
 
+
+
+
+        

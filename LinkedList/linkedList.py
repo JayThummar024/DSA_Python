@@ -65,9 +65,28 @@ class LinkedList:
             cnt+=1
             itr = itr.next
 
+    def insert_at(self,index,data):
+        if index <0 or index >= self.length():
+            raise Exception("Invalid index")
+        
+        if index == 0:
+            self.insert_at_start(data)
+            return
+
+        itr = self.head
+        count=0
+        while itr:
+            if count == index - 1:
+                node = Node(data , itr.next)
+                itr.next = node
+                break
+            itr=itr.next
+            count+=1
+        
+
+
 ll = LinkedList()
 ll.insert_values(["banana" , "cherry" , "mango" , "apple"])
-ll.remove_at(2)
 ll.print()
 
 
