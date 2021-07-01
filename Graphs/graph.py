@@ -57,34 +57,35 @@ class Graph:
                     q.append(i)
                     visited[i] = True
 
+    def dfs(self , node):
+        visited = [False] * (max(self.graph_dict)+1)
 
-flights = {
+        s = []
+        ans = []
+
+        s.append(node)     
+         
+        while len(s)>0:
+            x = s.pop()
+            visited[x] = True
+            ans.append(x)
+            for neighbour in self.graph_dict[x]:
+                if visited[neighbour] == False:
+                    s.append(neighbour)
+                    visited[neighbour] = True
+
+        return ans
+
+
+adj = {
     1:[2,3,4],
-    2:[],
-    3:[4,5],
-    4:[2],
-    5:[2,3]
+    2:[1,4,5],
+    3:[1],
+    4:[1,2],
+    5:[2]
 }
   
-routes = Graph(flights)
-c=3
-t=5
-time=0
-wait = 0
-sp = routes.shortest_path(1,1)
-print(sp)
-x=t
+graph = Graph(adj)
+print(graph.dfs(1))
 
-if c > t:   
-    while x<=c:
-        x+=t
-    wait = x-c
-else:
-    wait = t + (t-c)
-
-roads = len(sp) - 1
-station = roads - 1
-tt = max(-1 , roads*c + station*wait)
-
-print(tt)
 
