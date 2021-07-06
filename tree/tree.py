@@ -23,9 +23,10 @@ class Treenode:
         for child in self.children:
             child.print_tree()
 
+
 #above class is to create normal tree
 
-node = Treenode("Electronics")
+root = Treenode("Electronics")
 
 laptop = Treenode("Laptop")
 tv = Treenode("Tv")
@@ -53,10 +54,10 @@ mobile.add_child(samsung)
 mobile.add_child(mi)
 mobile.add_child(realme)
 
-node.add_child(laptop)
-node.add_child(tv)
-node.add_child(mobile)
+root.add_child(laptop)
+root.add_child(tv)
+root.add_child(mobile)
 
-node.print_tree()
+print(root.bfs())
 
 
