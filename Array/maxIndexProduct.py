@@ -1,0 +1,7 @@
+def maxIndexProd(arr):
+    return
+    
+
+
+        
+        
