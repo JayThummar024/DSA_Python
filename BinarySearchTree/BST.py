@@ -92,7 +92,6 @@ class BinarySearchTreeNode:
             self.right = self.right.delete_node(min_val)
         return self.data
 
-
                 
 def build_tree(elements):
     root = BinarySearchTreeNode(elements[0])
@@ -104,7 +103,7 @@ def build_tree(elements):
 BST = build_tree([3,4,1,2,5,0,-1,-5,8,6,]) 
 print(BST.in_order_traversal())
 BST.delete_node(5)
-print(BST.in_order_traversal())
+
 
 
 
