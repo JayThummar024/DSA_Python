@@ -3,11 +3,8 @@
 
 
 def party(n):
-    if n == 1:
-        return 1
-    if n == 2:
-        return 2
-
+    if n == 1:return 1
+    if n == 2:return 2
     return party(n-1) + party(n-1)*party(n-2)
 
 
