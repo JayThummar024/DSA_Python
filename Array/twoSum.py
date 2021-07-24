@@ -5,3 +5,5 @@ def piarSum(arr , target):
             if arr[i]+arr[k]==target:
                 pairs.extend([[arr[i],arr[k]]])
     return pairs
+
+

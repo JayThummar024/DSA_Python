@@ -3,12 +3,16 @@
 
 
 def party(n):
-    if n == 1:return 1
-    if n == 2:return 2
-    return party(n-1) + party(n-1)*party(n-2)
+    if n == 2:
+        return 2
+    if n == 1:
+        return 1
+    
+    x = party(n-1) + (n-1)*party(n-2)
+    return x
 
 
-print(party(3))
+print(party(6))
 
 # A B C
 # A BC 

@@ -2,27 +2,23 @@ obs = [[0,0,0],[0,1,0],[0,0,0]]
 
 count =0
 
-def paths(i , j ,m , n , obs ):
+def paths(i , j ,m , n , obs):
     global count
-    if (i==n-1 and j==n-1):
+    if (i==m-1 and j==n-1):
         count+=1
         return
     
-    if i > m and j > n:
+    if i > m-1 or j > n-1:
         return
     
     if i<m-1: 
-        if obs[i+1][j]==1:
-            return
-        else:
+        if not obs[i+1][j]==1:
             paths(i+1,j,m,n,obs)
     if j<n-1:
-        if obs[i][j+1]==1:
-            return
-        else:
+        if not obs[i][j+1]==1:
             paths(i,j+1,m,m,obs)
 
-    return count
+    return
 
-print(paths(0,0,3,3,obs))
+paths(0,0,3,3,obs)
 print(count)
