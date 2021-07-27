@@ -63,5 +63,27 @@ def printGrid(grid):
                 print("." , end=" ")
         print()
 
-NQueens(4)
-print(cnt)
+# NQueens(4)
+# print(cnt)
+
+
+# better approach to find is it safe
+rd = [0]*100
+ld = [0]*100
+col = [0]*100
+
+def NQ(cr , n):
+    global cnt
+    if cr==n:
+        cnt+=1
+        return
+
+    for c in range(n):
+        if not rd[cr+c] and not ld[cr-c+n-1] and not col[c]:
+            ld[cr-c+n-1] = rd[cr+c] = col[c] = 1
+            NQ(cr+1 , n) 
+            ld[cr-c+n-1] = rd[cr+c] = col[c] = 0
+
+
+# NQ(0,6)
+# print(cnt)
