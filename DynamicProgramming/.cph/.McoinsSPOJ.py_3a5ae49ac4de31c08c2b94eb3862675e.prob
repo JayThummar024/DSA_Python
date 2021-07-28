@@ -1,0 +1,1 @@
+{"name":"Local: McoinsSPOJ","url":"c:\\Users\\Jay Thummar\\Desktop\\python\\DynamicProgramming\\McoinsSPOJ.py","tests":[{"id":1627391315682,"input":"2 3 5 \n3 12 113 25714 88888","output":"ABAAB"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"c:\\Users\\Jay Thummar\\Desktop\\python\\DynamicProgramming\\McoinsSPOJ.py","group":"local","local":true}
