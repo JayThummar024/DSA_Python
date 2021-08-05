@@ -63,7 +63,7 @@ def printGrid(grid):
                 print("." , end=" ")
         print()
 
-# NQueens(4)
+NQueens(4)
 # print(cnt)
 
 
@@ -85,5 +85,5 @@ def NQ(cr , n):
             ld[cr-c+n-1] = rd[cr+c] = col[c] = 0
 
 
-# NQ(0,6)
-# print(cnt)
+NQ(0,10)
+print(cnt)
